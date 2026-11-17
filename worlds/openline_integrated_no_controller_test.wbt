@@ -52,6 +52,7 @@ Solid {
 Robot {
   translation -0.72 0 0.035
   name "OpenLineRobot"
+  controller "diagnostic_noop"
   children [
     # Blue chassis
     Shape {
