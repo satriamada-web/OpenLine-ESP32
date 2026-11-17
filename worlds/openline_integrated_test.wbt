@@ -1,12 +1,12 @@
 #VRML_SIM R2025a utf8
 
 WorldInfo {
-  basicTimeStep 16
+  basicTimeStep 8
 }
 
 Viewpoint {
   orientation 0 0 1 0
-  position 0 0 2.8
+  position 0 0 2.2
   fieldOfView 1.2
 }
 
@@ -19,7 +19,7 @@ DirectionalLight {
   intensity 1
 }
 
-# White arena with Webots' built-in static floor collision
+# Static white floor; built-in collision surface
 Floor {
   size 2 1.2
   appearance PBRAppearance {
@@ -28,179 +28,661 @@ Floor {
   }
 }
 
-# Circular black line
+# Circular black line: 64 short tangent segments form a continuous ring.
 Solid {
   children [
     Transform {
-      translation 0.35000 0.00000 0.001
+      translation 0.32000 0.00000 0.001
       rotation 0 0 1 1.57080
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.34327 0.06828 0.001
+      translation 0.31846 0.03137 0.001
+      rotation 0 0 1 1.66897
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.31385 0.06243 0.001
       rotation 0 0 1 1.76715
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.32336 0.13394 0.001
+      translation 0.30622 0.09289 0.001
+      rotation 0 0 1 1.86532
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.29564 0.12246 0.001
       rotation 0 0 1 1.96350
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.29101 0.19445 0.001
+      translation 0.28221 0.15085 0.001
+      rotation 0 0 1 2.06167
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.26607 0.17778 0.001
       rotation 0 0 1 2.15984
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.24749 0.24749 0.001
+      translation 0.24736 0.20301 0.001
+      rotation 0 0 1 2.25802
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.22627 0.22627 0.001
       rotation 0 0 1 2.35619
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.19445 0.29101 0.001
+      translation 0.20301 0.24736 0.001
+      rotation 0 0 1 2.45437
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.17778 0.26607 0.001
       rotation 0 0 1 2.55254
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.13394 0.32336 0.001
+      translation 0.15085 0.28221 0.001
+      rotation 0 0 1 2.65072
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.12246 0.29564 0.001
       rotation 0 0 1 2.74889
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.06828 0.34327 0.001
+      translation 0.09289 0.30622 0.001
+      rotation 0 0 1 2.84707
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.06243 0.31385 0.001
       rotation 0 0 1 2.94524
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.00000 0.35000 0.001
+      translation 0.03137 0.31846 0.001
+      rotation 0 0 1 3.04342
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.00000 0.32000 0.001
       rotation 0 0 1 3.14159
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.06828 0.34327 0.001
+      translation -0.03137 0.31846 0.001
+      rotation 0 0 1 3.23977
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.06243 0.31385 0.001
       rotation 0 0 1 3.33794
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.13394 0.32336 0.001
+      translation -0.09289 0.30622 0.001
+      rotation 0 0 1 3.43612
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.12246 0.29564 0.001
       rotation 0 0 1 3.53429
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.19445 0.29101 0.001
+      translation -0.15085 0.28221 0.001
+      rotation 0 0 1 3.63247
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.17778 0.26607 0.001
       rotation 0 0 1 3.73064
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.24749 0.24749 0.001
+      translation -0.20301 0.24736 0.001
+      rotation 0 0 1 3.82882
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.22627 0.22627 0.001
       rotation 0 0 1 3.92699
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.29101 0.19445 0.001
+      translation -0.24736 0.20301 0.001
+      rotation 0 0 1 4.02517
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.26607 0.17778 0.001
       rotation 0 0 1 4.12334
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.32336 0.13394 0.001
+      translation -0.28221 0.15085 0.001
+      rotation 0 0 1 4.22152
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.29564 0.12246 0.001
       rotation 0 0 1 4.31969
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.34327 0.06828 0.001
+      translation -0.30622 0.09289 0.001
+      rotation 0 0 1 4.41786
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.31385 0.06243 0.001
       rotation 0 0 1 4.51604
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.35000 0.00000 0.001
+      translation -0.31846 0.03137 0.001
+      rotation 0 0 1 4.61421
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.32000 0.00000 0.001
       rotation 0 0 1 4.71239
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.34327 -0.06828 0.001
+      translation -0.31846 -0.03137 0.001
+      rotation 0 0 1 4.81056
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.31385 -0.06243 0.001
       rotation 0 0 1 4.90874
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.32336 -0.13394 0.001
+      translation -0.30622 -0.09289 0.001
+      rotation 0 0 1 5.00691
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.29564 -0.12246 0.001
       rotation 0 0 1 5.10509
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.29101 -0.19445 0.001
+      translation -0.28221 -0.15085 0.001
+      rotation 0 0 1 5.20326
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.26607 -0.17778 0.001
       rotation 0 0 1 5.30144
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.24749 -0.24749 0.001
+      translation -0.24736 -0.20301 0.001
+      rotation 0 0 1 5.39961
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.22627 -0.22627 0.001
       rotation 0 0 1 5.49779
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.19445 -0.29101 0.001
+      translation -0.20301 -0.24736 0.001
+      rotation 0 0 1 5.59596
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.17778 -0.26607 0.001
       rotation 0 0 1 5.69414
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.13394 -0.32336 0.001
+      translation -0.15085 -0.28221 0.001
+      rotation 0 0 1 5.79231
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.12246 -0.29564 0.001
       rotation 0 0 1 5.89049
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.06828 -0.34327 0.001
+      translation -0.09289 -0.30622 0.001
+      rotation 0 0 1 5.98866
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.06243 -0.31385 0.001
       rotation 0 0 1 6.08684
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation -0.00000 -0.35000 0.001
+      translation -0.03137 -0.31846 0.001
+      rotation 0 0 1 6.18501
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.00000 -0.32000 0.001
       rotation 0 0 1 6.28319
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.06828 -0.34327 0.001
+      translation 0.03137 -0.31846 0.001
+      rotation 0 0 1 6.38136
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.06243 -0.31385 0.001
       rotation 0 0 1 6.47953
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.13394 -0.32336 0.001
+      translation 0.09289 -0.30622 0.001
+      rotation 0 0 1 6.57771
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.12246 -0.29564 0.001
       rotation 0 0 1 6.67588
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.19445 -0.29101 0.001
+      translation 0.15085 -0.28221 0.001
+      rotation 0 0 1 6.77406
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.17778 -0.26607 0.001
       rotation 0 0 1 6.87223
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.24749 -0.24749 0.001
+      translation 0.20301 -0.24736 0.001
+      rotation 0 0 1 6.97041
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.22627 -0.22627 0.001
       rotation 0 0 1 7.06858
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.29101 -0.19445 0.001
+      translation 0.24736 -0.20301 0.001
+      rotation 0 0 1 7.16676
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.26607 -0.17778 0.001
       rotation 0 0 1 7.26493
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.32336 -0.13394 0.001
+      translation 0.28221 -0.15085 0.001
+      rotation 0 0 1 7.36311
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.29564 -0.12246 0.001
       rotation 0 0 1 7.46128
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
     Transform {
-      translation 0.34327 -0.06828 0.001
+      translation 0.30622 -0.09289 0.001
+      rotation 0 0 1 7.55946
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.31385 -0.06243 0.001
       rotation 0 0 1 7.65763
-      children [ Shape { appearance PBRAppearance { baseColor 0.015 0.015 0.015 roughness 1 } geometry Box { size 0.08 0.065 0.002 } } ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.31846 -0.03137 0.001
+      rotation 0 0 1 7.75581
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.01 0.01 0.01 roughness 1 }
+          geometry Box { size 0.04 0.055 0.002 }
+        }
+      ]
     }
   ]
   name "circular_black_track"
 }
 
+# Differential-drive robot: ESP32 + L298N behavior is represented by
+# one velocity-controlled motor per DC gearbox motor.
 Robot {
-  translation 0 -0.35 0.04
+  translation 0 -0.32 0.04
   name "OpenLineRobot"
   controller "line_follower"
   children [
-    # Blue chassis
+    # Chassis
     Shape {
       appearance PBRAppearance {
         baseColor 0.04 0.22 0.72
@@ -210,7 +692,7 @@ Robot {
       geometry Box { size 0.18 0.13 0.022 }
     }
 
-    # Left wheel
+    # Left wheel and motor
     HingeJoint {
       jointParameters HingeJointParameters {
         anchor 0 0.075 0
@@ -219,8 +701,8 @@ Robot {
       device [
         RotationalMotor {
           name "left wheel motor"
-          maxVelocity 20
-          maxTorque 2
+          maxVelocity 8
+          maxTorque 0.8
         }
       ]
       endPoint Solid {
@@ -240,7 +722,7 @@ Robot {
       }
     }
 
-    # Right wheel
+    # Right wheel and motor
     HingeJoint {
       jointParameters HingeJointParameters {
         anchor 0 -0.075 0
@@ -249,8 +731,8 @@ Robot {
       device [
         RotationalMotor {
           name "right wheel motor"
-          maxVelocity 20
-          maxTorque 2
+          maxVelocity 8
+          maxTorque 0.8
         }
       ]
       endPoint Solid {
@@ -270,7 +752,7 @@ Robot {
       }
     }
 
-    # Three downward-facing camera sensors
+    # Three downward-facing cameras approximate the three TCRT5000 modules.
     Transform {
       translation 0.085 0.035 -0.022
       children [
@@ -278,13 +760,9 @@ Robot {
           name "left sensor"
           width 1
           height 1
-          fieldOfView 0.1
-          near 0.005
-          far 0.5
-        }
-        Shape {
-          appearance PBRAppearance { baseColor 0.9 0.2 0.1 }
-          geometry Sphere { radius 0.008 }
+          fieldOfView 0.05
+          near 0.001
+          far 0.2
         }
       ]
     }
@@ -295,13 +773,9 @@ Robot {
           name "center sensor"
           width 1
           height 1
-          fieldOfView 0.1
-          near 0.005
-          far 0.5
-        }
-        Shape {
-          appearance PBRAppearance { baseColor 0.1 0.8 0.2 }
-          geometry Sphere { radius 0.008 }
+          fieldOfView 0.05
+          near 0.001
+          far 0.2
         }
       ]
     }
@@ -312,20 +786,16 @@ Robot {
           name "right sensor"
           width 1
           height 1
-          fieldOfView 0.1
-          near 0.005
-          far 0.5
-        }
-        Shape {
-          appearance PBRAppearance { baseColor 0.1 0.3 0.95 }
-          geometry Sphere { radius 0.008 }
+          fieldOfView 0.05
+          near 0.001
+          far 0.2
         }
       ]
     }
 
     # Rear caster visual
     Transform {
-      translation -0.065 0 -0.025
+      translation -0.065 0 -0.022
       children [
         Shape {
           appearance PBRAppearance { baseColor 0.65 0.65 0.65 }
@@ -334,6 +804,16 @@ Robot {
       ]
     }
   ]
-  boundingObject Box { size 0.18 0.13 0.022 }
+
+  # The chassis and passive rear caster share the robot body collision shape.
+  boundingObject Group {
+    children [
+      Box { size 0.18 0.13 0.022 }
+      Transform {
+        translation -0.065 0 -0.022
+        children [ Sphere { radius 0.018 } ]
+      }
+    ]
+  }
   physics Physics { density -1 mass 0.35 }
 }
