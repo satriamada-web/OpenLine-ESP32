@@ -57,7 +57,6 @@ Robot {
   name "OpenLineRobot"
   controller "diagnostic_noop"
   translation -0.72 0 0.035
-  name "OpenLineRobot"
   children [
     Shape {
       appearance PBRAppearance {
