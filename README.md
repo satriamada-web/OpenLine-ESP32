@@ -122,3 +122,38 @@ The first run is a prototype and requires validation in the installed Webots ver
 ### Important simulation boundary
 
 The three virtual cameras sample surface brightness to approximate three TCRT5000 reflectance modules. Webots simulates robot motion and sensor behavior; it does not emulate the ESP32 chip, Bluetooth radio, or the electrical characteristics of the L298N. Those are implemented and tested separately on the physical robot.
+
+
+## Circular line-follower simulation (Webots R2025a)
+
+The active prototype is `worlds/openline_integrated_test.wbt`:
+- White floor with a **0.64 m diameter** circular black track.
+- Blue chassis, two independently driven wheels, and a passive rear caster.
+- Three downward-facing virtual reflectance sensors (left, center, right), representing the planned three TCRT5000 modules.
+- Two velocity-controlled wheel motors, representing the two DC motors through the planned L298N driver.
+- A weighted-centroid PD-style controller with a slow line-search behavior when all sensors lose the track.
+
+Run it from PowerShell after pulling the latest changes:
+
+```powershell
+git pull
+& "$env:LOCALAPPDATA\Programs\Webots\msys64\mingw64\bin\webots.exe" --stdout --stderr "$env:USERPROFILE\OpenLine-ESP32\worlds\openline_integrated_test.wbt"
+```
+
+### Simulation-to-hardware mapping
+
+| Planned physical module | Webots representation |
+|---|---|
+| ESP32 DevKit V1 | Webots Python controller (control logic only; not ESP32 emulation) |
+| 3 × TCRT5000 modules | 3 downward 1×1 cameras sampling black/white brightness |
+| L298N | Two velocity-controlled RotationalMotor devices; driver electronics are not electrically simulated |
+| 2 × DC gearbox motors | Left and right wheel joints |
+| 2 drive wheels | Cylinders with physical collision and mass |
+| 360-degree caster | Rear sphere visual and collision support |
+| Battery pack | Not electrically modeled; voltage, current, and battery wiring remain outside Webots |
+
+The repository currently does not define final ESP32 GPIO assignments, motor voltage/current, sensor module output mode, or battery wiring. Therefore this simulation maps the confirmed component roles, not unconfirmed electrical pin settings. Those values must be added after the exact module variants and wiring are confirmed.
+
+### Controller tuning
+
+Tune `BASE_SPEED`, `MAX_SPEED`, `KP`, and `KD` in `controllers/line_follower/line_follower.py` only after the robot stays on the floor and the three sensor readings distinguish black from white. Camera brightness is a simulation approximation; real TCRT5000 modules require calibration against their actual analog/digital outputs.
