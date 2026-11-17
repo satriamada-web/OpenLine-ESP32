@@ -5,8 +5,9 @@ WorldInfo {
 }
 
 Viewpoint {
-  orientation 0.57735 0.57735 0.57735 2.0944
-  position 1.8 -2.0 1.8
+  orientation 0 0 1 0
+  position 0 0 2.8
+  fieldOfView 1.2
 }
 
 Background {
