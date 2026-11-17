@@ -1,8 +1,8 @@
-"""OpenLine ESP32 - Webots prototype controller.
+"""OpenLine ESP32: Webots prototype using three downward 1x1 cameras.
 
-Three downward-facing LightSensor devices approximate the three TCRT5000
-reflectance modules. This validates robot motion/control logic; it does not
-emulate ESP32 silicon or the electrical L298N driver.
+Each camera approximates one TCRT5000 reflectance sensor by sampling the
+surface brightness beneath it. This is a behavioral simulation, not an
+electrical/ESP32/L298N emulation.
 """
 from controller import Robot
 
@@ -22,31 +22,31 @@ for sensor in sensors:
 MAX_SPEED = 8.0
 BASE_SPEED = 5.0
 KP = 2.4
-# LightSensor values depend on the rendered scene and device calibration.
-# Start with a relative threshold and inspect printed readings if needed.
-THRESHOLD = 0.5
+BLACK_THRESHOLD = 100  # RGB brightness 0..255; calibrate after first run
 
 def clamp(value, low, high):
     return max(low, min(high, value))
 
 while robot.step(timestep) != -1:
-    readings = [sensor.getValue() for sensor in sensors]
+    brightness = []
+    for sensor in sensors:
+        pixels = sensor.getImageArray()
+        # A 1x1 camera returns one RGB(A) pixel.
+        pixel = pixels[0][0]
+        brightness.append((int(pixel[0]) + int(pixel[1]) + int(pixel[2])) / 3.0)
 
-    # For the initial prototype, determine which sensor sees the darker line.
-    # If the sensor scale is inverted or differs on your Webots version,
-    # we will calibrate this threshold from the live readings.
-    line_detected = [value < THRESHOLD for value in readings]
-
+    # Dark pixels indicate the black track.
+    on_black = [value < BLACK_THRESHOLD for value in brightness]
     weights = [1.0, 0.0, -1.0]  # left, center, right
-    active = [weights[i] for i in range(3) if line_detected[i]]
 
-    if active:
-        error = sum(active) / len(active)
+    active_weights = [weights[i] for i in range(3) if on_black[i]]
+    if active_weights:
+        error = sum(active_weights) / len(active_weights)
         correction = KP * error
         left_speed = clamp(BASE_SPEED - correction, -MAX_SPEED, MAX_SPEED)
         right_speed = clamp(BASE_SPEED + correction, -MAX_SPEED, MAX_SPEED)
     else:
-        # No sensor sees the line: stop safely until calibration is complete.
+        # Safe stop if the line is not detected; calibration comes next.
         left_speed = 0.0
         right_speed = 0.0
 
