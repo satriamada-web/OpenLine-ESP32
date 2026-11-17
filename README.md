@@ -92,3 +92,33 @@ Contributions are welcome after the initial architecture is established. Please 
 ## License
 
 Licensing will be added when the first hardware and software files are ready. The intended approach is to license software and hardware documentation/design files separately.
+
+
+## Run the first Webots simulation on Windows
+
+The first prototype contains:
+- `worlds/openline_arena.wbt`: white arena, straight black track, differential-drive robot.
+- `controllers/line_follower/line_follower.py`: controller with three downward 1x1 cameras used as virtual reflectance sensors.
+
+### Get the project
+
+Clone the public repository:
+
+```bash
+git clone https://github.com/satriamada-web/OpenLine-ESP32.git
+```
+
+Or download the repository as a ZIP from GitHub and extract it.
+
+### Open in Webots
+
+1. Start Webots.
+2. Select **File → Open World**.
+3. Open `OpenLine-ESP32/worlds/openline_arena.wbt`.
+4. Press the **Run** button.
+
+The first run is a prototype and requires validation in the installed Webots version. If the robot stops or the line is not detected, inspect the controller console and calibrate `BLACK_THRESHOLD` in `controllers/line_follower/line_follower.py`.
+
+### Important simulation boundary
+
+The three virtual cameras sample surface brightness to approximate three TCRT5000 reflectance modules. Webots simulates robot motion and sensor behavior; it does not emulate the ESP32 chip, Bluetooth radio, or the electrical characteristics of the L298N. Those are implemented and tested separately on the physical robot.
