@@ -1,5 +1,7 @@
 #VRML_SIM R2025a utf8
 
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+
 WorldInfo {
   basicTimeStep 8
 }
