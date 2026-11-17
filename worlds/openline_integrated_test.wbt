@@ -19,20 +19,13 @@ DirectionalLight {
   intensity 1
 }
 
-# White arena
-Solid {
-  translation 0 0 -0.01
-  children [
-    Shape {
-      appearance PBRAppearance {
-        baseColor 0.92 0.92 0.92
-        roughness 1
-      }
-      geometry Box { size 2 1.2 0.02 }
-    }
-  ]
-  name "white_arena"
-  boundingObject Box { size 2 1.2 0.02 }
+# White arena with Webots' built-in static floor collision
+Floor {
+  size 2 1.2
+  appearance PBRAppearance {
+    baseColor 0.92 0.92 0.92
+    roughness 1
+  }
 }
 
 # Straight black line
@@ -51,7 +44,7 @@ Solid {
 }
 
 Robot {
-  translation -0.72 0 0.035
+  translation -0.72 0 0.04
   name "OpenLineRobot"
   controller "line_follower"
   children [
