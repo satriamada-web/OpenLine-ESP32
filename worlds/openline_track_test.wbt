@@ -1,0 +1,54 @@
+#VRML_SIM R2025a utf8
+
+WorldInfo {
+  basicTimeStep 16
+}
+
+Viewpoint {
+  orientation 0.57735 0.57735 0.57735 2.0944
+  position 0 0 3
+}
+
+Background {
+  skyColor [ 0.15 0.18 0.22 ]
+}
+
+DirectionalLight {
+  direction -0.4 -0.6 -1
+  intensity 1
+}
+
+Solid {
+  translation 0 0 -0.01
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.92 0.92 0.92
+        roughness 1
+      }
+      geometry Box {
+        size 2 1.2 0.02
+      }
+    }
+  ]
+  name "white_arena"
+  boundingObject Box {
+    size 2 1.2 0.02
+  }
+}
+
+Solid {
+  translation 0 0 0.001
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.015 0.015 0.015
+        roughness 1
+      }
+      geometry Box {
+        size 1.75 0.065 0.002
+      }
+    }
+  ]
+  name "black_track"
+}
